@@ -1,0 +1,28 @@
+﻿<Application x:Class="WpfStopwatch.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:WpfStopwatch"
+             xmlns:viewModel="clr-namespace:WpfStopwatch.MVVM.ViewModel"
+             xmlns:view="clr-namespace:WpfStopwatch.MVVM.View"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Theme/MenuButtonTheme.xaml"/>
+                <ResourceDictionary Source="Theme/TextboxTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate DataType="{x:Type viewModel:Page1ViewModel}">
+                <view:Page1View/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:Page2ViewModel}">
+                <view:Page2View/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:Page3ViewModel}">
+                <view:Page3View/>
+            </DataTemplate>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
