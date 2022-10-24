@@ -57,6 +57,17 @@
                              Height="20"
                              Margin="10,0,0,0"/>
                 </StackPanel>
+
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Left"
+                            Width="575">
+                    <Button Content="Submit"
+                        Width="80"
+                        Height="22"
+                        Margin="495,20,0,10"
+                        Background="#EEEEEE" 
+                        FontSize="11"/>
+                </StackPanel>
             </StackPanel>
         </StackPanel>
     </Border>
