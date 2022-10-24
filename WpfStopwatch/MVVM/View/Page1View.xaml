@@ -20,7 +20,7 @@
                      Style="{StaticResource ModernTextbox}"/>
 
             <StackPanel>
-                <TextBlock Text="Mulai"
+                <TextBlock Text="Start"
                            Foreground="White"
                            VerticalAlignment="Stretch"
                            FontSize="14"
@@ -39,7 +39,7 @@
                              Margin="10,0,0,0"/>
                 </StackPanel>
                 
-                <TextBlock Text="Selesai"
+                <TextBlock Text="Finish"
                            Foreground="White"
                            VerticalAlignment="Stretch"
                            FontSize="14"
