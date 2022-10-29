@@ -36,7 +36,7 @@
                        Margin="25,0,0,0"/>
 
             <StackPanel Grid.Row="1">
-                <RadioButton Content="Tes"
+                <RadioButton Content="Input"
                              Height="50"
                              Foreground="White"
                              FontSize="14"
@@ -44,14 +44,14 @@
                              Style="{StaticResource MenuButtonTheme}"
                              Command="{Binding Page1ViewCommand}"/>
 
-                <RadioButton Content="Tess"
+                <RadioButton Content="Stopwatch"
                              Height="50"
                              Foreground="White"
                              FontSize="14"
                              Style="{StaticResource MenuButtonTheme}"
                              Command="{Binding Page2ViewCommand}"/>
 
-                <RadioButton Content="Tessss"
+                <RadioButton Content="Log"
                              Height="50"
                              Foreground="White"
                              FontSize="14"

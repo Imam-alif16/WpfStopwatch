@@ -7,8 +7,50 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
 
-    <Border Background="#1B1B1B" 
+    <Border Background="#22202f" 
             CornerRadius="10">
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
             
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="100"/>
+            </Grid.RowDefinitions>
+
+            <Border Grid.Row="0"
+                    Grid.ColumnSpan="2"
+                    Height="100"
+                    Width="350"
+                    VerticalAlignment="Top"
+                    Margin="0,50,0,0">
+                <TextBlock Name="StopwatchDisplay"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontSize="40"
+                           Foreground="#EEEEEE"/>
+            </Border>
+
+            <Button Name="Start"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Width="100"
+                    Height="35"
+                    FontSize="14" 
+                    Click="Start_Click">Start
+            </Button>
+            
+            <Button Name="Stop"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Width="100"
+                    Height="35"
+                    FontSize="14" 
+                    Click="Stop_Click">Stop
+            </Button>
+        </Grid>
     </Border>
 </UserControl>
