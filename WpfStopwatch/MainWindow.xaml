@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WpfStopwatch"
         xmlns:viewModel="clr-namespace:WpfStopwatch.MVVM.ViewModel"
         mc:Ignorable="d"
-        Title="Main Window" Height="600" Width="920"
+        Title="Main Window" Height="600" Width="920" Closing="Window_Closing"
         WindowStyle="SingleBorderWindow"
         ResizeMode="CanMinimize"
         Background="Transparent"

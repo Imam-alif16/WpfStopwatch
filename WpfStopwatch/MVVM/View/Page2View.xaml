@@ -21,36 +21,71 @@
                 <RowDefinition Height="100"/>
             </Grid.RowDefinitions>
 
-            <Border Grid.Row="0"
-                    Grid.ColumnSpan="2"
+            <StackPanel Grid.Row="0"
+                        Grid.ColumnSpan="2">
+                <Border 
                     Height="100"
                     Width="350"
                     VerticalAlignment="Top"
                     Margin="0,50,0,0">
-                <TextBlock Name="StopwatchDisplay"
+
+                    <TextBlock Name="StopwatchDisplay"
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"
                            FontSize="40"
                            Foreground="#EEEEEE"/>
-            </Border>
+                </Border>
 
-            <Button Name="Start"
-                    Grid.Row="1"
-                    Grid.Column="0"
-                    Width="100"
-                    Height="35"
-                    FontSize="14" 
-                    Click="Start_Click">Start
-            </Button>
+                <RichTextBox Name="rtb" 
+                             Width="500"
+                             Height="150"
+                             Margin="0,25,0,0">
+                    
+                </RichTextBox>
+            </StackPanel>
             
-            <Button Name="Stop"
-                    Grid.Row="1"
-                    Grid.Column="1"
-                    Width="100"
-                    Height="35"
-                    FontSize="14" 
-                    Click="Stop_Click">Stop
-            </Button>
+
+            <StackPanel Grid.Row="1"
+                        Grid.Column="0"
+                        Orientation="Horizontal">
+
+                <Button Name="Start"
+                        Width="100"
+                        Height="35"
+                        Margin="40,0,0,0"
+                        FontSize="14" Click="Start_Click" 
+                        >Start
+                </Button>
+
+                <Button Name="Stop"
+                        Width="100"
+                        Height="35"
+                        Margin="40,0,0,0"
+                        FontSize="14" Click="Stop_Click" 
+                        >Stop
+                </Button>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1"
+                        Grid.Column="1"
+                        Orientation="Horizontal">
+
+                <Button Name="Install"
+                        Width="100"
+                        Height="35"
+                        Margin="40,0,0,0"
+                        FontSize="14" Click="Install_Click" 
+                        >Install
+                </Button>
+
+                <Button Name="Remove"
+                        Width="100"
+                        Height="35"
+                        Margin="40,0,0,0"
+                        FontSize="14" Click="Remove_Click" 
+                        >Remove
+                </Button>
+            </StackPanel>
         </Grid>
     </Border>
 </UserControl>

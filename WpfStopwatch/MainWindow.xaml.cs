@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fiddler;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfStopwatch.MVVM.View;
 using WpfStopwatch.MVVM.ViewModel;
 
 namespace WpfStopwatch
@@ -25,5 +27,23 @@ namespace WpfStopwatch
         {
             InitializeComponent();
         }
+
+        [Obsolete]
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (CertMaker.rootCertExists())
+            {
+                CertMaker.removeFiddlerGeneratedCerts();
+            }
+
+            if (FiddlerApplication.oProxy != null)
+            {
+                if (FiddlerApplication.oProxy.IsAttached)
+                {
+                    FiddlerApplication.oProxy.Detach();
+                }
+            }
+        }
+
     }
 }
