@@ -103,7 +103,8 @@ namespace WpfStopwatch.MVVM.View
             string Headers = oSession.oRequest.headers.ToString();
             string Body = Encoding.UTF8.GetString(oSession.RequestBody);
             //Firstline = oSession.RequestMethod + " " + oSession.fullUrl + " " + oSession.oRequest.headers.HTTPVersion;
-            Firstline = oSession.RequestMethod + " " + oSession.fullUrl;
+            //Firstline = oSession.RequestMethod + " " + oSession.fullUrl;
+            Firstline = oSession.fullUrl;
             int at = Headers.IndexOf("\r\n");
             if (at < 0)
             {
@@ -117,7 +118,7 @@ namespace WpfStopwatch.MVVM.View
             //}
             //appentext(Output);
             Console.WriteLine(Output);
-            //Comparetext(Firstline);
+            Comparetext(Firstline);
         }
 
         private void Stops()
@@ -151,7 +152,7 @@ namespace WpfStopwatch.MVVM.View
 
         private void Comparetext(string value)
         {
-            if (value == "youtube.com")
+            if (value == "https://github.com/")
             {
                 _timer.Start();
             }
