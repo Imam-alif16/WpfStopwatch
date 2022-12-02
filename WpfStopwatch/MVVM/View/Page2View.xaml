@@ -35,13 +35,6 @@
                            FontSize="40"
                            Foreground="#EEEEEE"/>
                 </Border>
-
-                <RichTextBox Name="rtb" 
-                             Width="500"
-                             Height="150"
-                             Margin="0,25,0,0">
-                    
-                </RichTextBox>
             </StackPanel>
             
 

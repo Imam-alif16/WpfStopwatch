@@ -101,7 +101,7 @@ namespace WpfStopwatch.MVVM.View
             }
 
             string Headers = oSession.oRequest.headers.ToString();
-            string Body = Encoding.UTF8.GetString(oSession.RequestBody);
+            //string Body = Encoding.UTF8.GetString(oSession.RequestBody);
             //Firstline = oSession.RequestMethod + " " + oSession.fullUrl + " " + oSession.oRequest.headers.HTTPVersion;
             //Firstline = oSession.RequestMethod + " " + oSession.fullUrl;
             Firstline = oSession.fullUrl;
@@ -119,6 +119,7 @@ namespace WpfStopwatch.MVVM.View
             //appentext(Output);
             Console.WriteLine(Output);
             Comparetext(Firstline);
+            Comparestop(Firstline);
         }
 
         private void Stops()
@@ -150,25 +151,36 @@ namespace WpfStopwatch.MVVM.View
             }
         }
 
-        private void Comparetext(string value)
+        private bool Comparetext(string value)
         {
-            if (value == "https://github.com/")
+            if (value == "https://akademik.uin-suka.ac.id/")
             {
                 _timer.Start();
+                
             }
+            return true;
         }
 
-        //private void appentext(string value)
-        //{
-        //    if (rtb.Dispatcher.CheckAccess())
-        //    {
-        //        rtb.Dispatcher.Invoke(new Action<string>(appentext), new object[] { value });
-        //        return;
-        //    }
+        private async void Comparestop(string value)
+        {
+            await Task.Run(async () =>
+            {
+                if (Comparetext(Firstline) == true)
+                {
+                    if (value == "https://akademik.uin-suka.ac.id/upbi/daftarplacement")
+                    {
+                        _timer.Stop();
 
-        //    rtb.AppendText(value);
-        //    rtb.ScrollToEnd();
-        //}
+                    }
+                    else
+                    {
+                        await Task.Delay(5000);
+                        Comparestop(Firstline);
+                    }
+                }
+            });
+            
+        }
 
         private void Start_Click(object sender, RoutedEventArgs e)
         {
