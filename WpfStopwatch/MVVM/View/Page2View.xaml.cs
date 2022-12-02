@@ -174,7 +174,7 @@ namespace WpfStopwatch.MVVM.View
                     }
                     else
                     {
-                        await Task.Delay(5000);
+                        await Task.Delay(1);
                         Comparestop(Firstline);
                     }
                 }
