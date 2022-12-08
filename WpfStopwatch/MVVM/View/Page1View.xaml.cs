@@ -30,7 +30,7 @@ namespace WpfStopwatch.MVVM.View
             DataContext = new Page1ViewModel();
         }
 
-        SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-9DNQMPJG\SQLEXPRESS;Initial Catalog=NewDB;Integrated Security=True");
+        //SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-9DNQMPJG\SQLEXPRESS;Initial Catalog=NewDB;Integrated Security=True");
 
         public void clearData()
         {
@@ -46,16 +46,16 @@ namespace WpfStopwatch.MVVM.View
                 MessageBox.Show("Process is required", "Failed", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
-            if (start_txt.Text == string.Empty)
-            {
-                MessageBox.Show("Start URL is required", "Failed", MessageBoxButton.OK, MessageBoxImage.Error);
-                return false;
-            }
-            if (finish_txt.Text == string.Empty)
-            {
-                MessageBox.Show("Finish URL is required", "Failed", MessageBoxButton.OK, MessageBoxImage.Error);
-                return false;
-            }
+            //if (start_txt.Text == string.Empty)
+            //{
+            //    MessageBox.Show("Start URL is required", "Failed", MessageBoxButton.OK, MessageBoxImage.Error);
+            //    return false;
+            //}
+            //if (finish_txt.Text == string.Empty)
+            //{
+            //    MessageBox.Show("Finish URL is required", "Failed", MessageBoxButton.OK, MessageBoxImage.Error);
+            //    return false;
+            //}
 
             return true;
         }
@@ -66,14 +66,14 @@ namespace WpfStopwatch.MVVM.View
             {
                 if (isValid())
                 {
-                    SqlCommand cmd = new SqlCommand("INSERT INTO FirstTable VALUES (@Process, @Start, @Finish)", con);
-                    cmd.CommandType = CommandType.Text;
-                    cmd.Parameters.AddWithValue("@Process", process_txt.Text);
-                    cmd.Parameters.AddWithValue("@Start", start_txt.Text);
-                    cmd.Parameters.AddWithValue("@Finish", finish_txt.Text);
-                    con.Open();
-                    cmd.ExecuteNonQuery();
-                    con.Close();
+                    //SqlCommand cmd = new SqlCommand("INSERT INTO FirstTable VALUES (@Process, @Start, @Finish)", con);
+                    //cmd.CommandType = CommandType.Text;
+                    //cmd.Parameters.AddWithValue("@Process", process_txt.Text);
+                    //cmd.Parameters.AddWithValue("@Start", start_txt.Text);
+                    //cmd.Parameters.AddWithValue("@Finish", finish_txt.Text);
+                    //con.Open();
+                    //cmd.ExecuteNonQuery();
+                    //con.Close();
                     MessageBox.Show("Successfully registered", "Saved", MessageBoxButton.OK, MessageBoxImage.Information);
                     clearData();
                 }

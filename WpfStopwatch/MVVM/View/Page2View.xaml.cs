@@ -29,8 +29,8 @@ namespace WpfStopwatch.MVVM.View
 
         int h, m, s, ms;
         string Firstline { get; set; }
-
-        
+        string StartURLS { get; set; }
+        string StopURLS { get; set; }
 
         public Page2View()
         {
@@ -40,6 +40,7 @@ namespace WpfStopwatch.MVVM.View
 
             _timer = new Timer(interval:1);
             _timer.Elapsed += OnTimerElapse;
+
         }
 
         private void OnTimerElapse(object sender, ElapsedEventArgs e)
@@ -101,22 +102,15 @@ namespace WpfStopwatch.MVVM.View
             }
 
             string Headers = oSession.oRequest.headers.ToString();
-            //string Body = Encoding.UTF8.GetString(oSession.RequestBody);
-            //Firstline = oSession.RequestMethod + " " + oSession.fullUrl + " " + oSession.oRequest.headers.HTTPVersion;
-            //Firstline = oSession.RequestMethod + " " + oSession.fullUrl;
+
             Firstline = oSession.fullUrl;
             int at = Headers.IndexOf("\r\n");
             if (at < 0)
             {
                 return;
             }
-            //string Output = Firstline + Environment.NewLine + Headers.Substring(at + 1);
+
             string Output = Firstline;
-            //if (Body!= null)
-            //{
-            //    Output += Body + Environment.NewLine;
-            //}
-            //appentext(Output);
             Console.WriteLine(Output);
             Comparetext(Firstline);
             Comparestop(Firstline);
@@ -153,7 +147,7 @@ namespace WpfStopwatch.MVVM.View
 
         private bool Comparetext(string value)
         {
-            if (value == "https://akademik.uin-suka.ac.id/")
+            if (value == StartURLS)
             {
                 _timer.Start();
                 
@@ -167,14 +161,14 @@ namespace WpfStopwatch.MVVM.View
             {
                 if (Comparetext(Firstline) == true)
                 {
-                    if (value == "https://akademik.uin-suka.ac.id/upbi/daftarplacement")
+                    if (value == StopURLS)
                     {
                         _timer.Stop();
 
                     }
                     else
                     {
-                        await Task.Delay(1);
+                        await Task.Delay(500);
                         Comparestop(Firstline);
                     }
                 }
@@ -185,6 +179,22 @@ namespace WpfStopwatch.MVVM.View
         private void Start_Click(object sender, RoutedEventArgs e)
         {
             Starts();
+        }
+
+        private void SubmitBtn_Click(object sender, RoutedEventArgs e)
+        {
+            StartURLS = StartURL.Text;
+            StopURLS = StopURL.Text;
+            MessageBox.Show("Successfully registered", "Saved", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        private void Clear_Click(object sender, RoutedEventArgs e)
+        {
+            ms = 0;
+            s = 0;
+            m = 0;
+            h = 0;
+            StopwatchDisplay.Text = _startStopwatchDisplay;
         }
 
         private void Stop_Click(object sender, RoutedEventArgs e)
@@ -201,15 +211,5 @@ namespace WpfStopwatch.MVVM.View
         {
             Removecert();
         }
-
-        //private void Start_Click(object sender, RoutedEventArgs e)
-        //{
-        //    _timer.Start();
-        //}
-
-        //private void Stop_Click(object sender, RoutedEventArgs e)
-        //{
-        //    _timer.Stop();
-        //}
     }
 }

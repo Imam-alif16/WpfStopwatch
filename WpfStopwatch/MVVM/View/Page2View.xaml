@@ -34,7 +34,56 @@
                            VerticalAlignment="Center"
                            FontSize="40"
                            Foreground="#EEEEEE"/>
+
+                    
                 </Border>
+
+                <Button Name="Clear"
+                        Width="100"
+                        Height="35"
+                        Margin="0,20,0,0"
+                        Background="#EEEEEE"
+                        FontSize="14" Click="Clear_Click" 
+                        >Clear
+                </Button>
+
+                <TextBlock HorizontalAlignment="Left"
+                           Margin="40,80,0,0"
+                           Text="Start"
+                           Foreground="#EEEEEE"
+                           FontSize="14"/>
+
+                <Border Margin="40,10,0,0"
+                        HorizontalAlignment="Left">
+
+                    <TextBox Name="StartURL"
+                             Width="400"
+                             Height="20"/>
+                </Border>
+
+                <TextBlock HorizontalAlignment="Left"
+                           Margin="40,10,0,0"
+                           Text="Finish"
+                           Foreground="#EEEEEE"
+                           FontSize="14"/>
+
+                <Border Margin="40,10,0,0"
+                        HorizontalAlignment="Left">
+
+                    <TextBox Name="StopURL" 
+                             Width="400"
+                             Height="20"/>
+                </Border>
+
+                <Button Name="SubmitBtn"
+                        Width="88"
+                        Height="22"
+                        Margin="352,12,0,0"
+                        FontSize="11"
+                        HorizontalAlignment="Left"
+                        Background="#EEEEEE" Click="SubmitBtn_Click"
+                        >Submit
+                </Button>
             </StackPanel>
             
 
@@ -46,6 +95,7 @@
                         Width="100"
                         Height="35"
                         Margin="40,0,0,0"
+                        Background="#EEEEEE"
                         FontSize="14" Click="Start_Click" 
                         >Start
                 </Button>
@@ -54,6 +104,7 @@
                         Width="100"
                         Height="35"
                         Margin="40,0,0,0"
+                        Background="#EEEEEE"
                         FontSize="14" Click="Stop_Click" 
                         >Stop
                 </Button>
@@ -67,6 +118,7 @@
                         Width="100"
                         Height="35"
                         Margin="40,0,0,0"
+                        Background="#EEEEEE"
                         FontSize="14" Click="Install_Click" 
                         >Install
                 </Button>
@@ -75,6 +127,7 @@
                         Width="100"
                         Height="35"
                         Margin="40,0,0,0"
+                        Background="#EEEEEE"
                         FontSize="14" Click="Remove_Click" 
                         >Remove
                 </Button>

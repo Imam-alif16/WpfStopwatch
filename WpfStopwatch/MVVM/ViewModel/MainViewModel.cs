@@ -34,7 +34,7 @@ namespace WpfStopwatch.MVVM.ViewModel
             Page3VM = new Page3ViewModel();
 
 
-            CurrentView = Page1VM;
+            CurrentView = Page2VM;
 
             Page1ViewCommand = new RelayCommand(o =>
             {
